@@ -1,4 +1,21 @@
-def we_crash_all(name: str) -> str:    
-    return 'Привет, ' + name + ', мы всё сломали!'
+from math import sqrt
 
-print(we_crash_all(100))
+message = ('Добро пожаловать в самую лучшую программу для вычисления '
+           'квадратного корня из заданного числа')
+print(message)
+
+
+def calculatesquareroot(number):
+    """Вычисляет квадратный корень."""
+    return sqrt(number)
+
+
+def calc(your_number):
+    """Проверяет число пользователя."""
+    if your_number <= 0:
+        return
+    print(f'Мы вычислили квадратный корень из введённого вами числа.'
+          f' Это будет: {calculatesquareroot(your_number)}')
+
+
+calc(25.5)

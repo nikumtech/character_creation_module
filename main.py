@@ -1,7 +1,9 @@
 from random import randint
+from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Проводит атаку по противнику."""
     if char_class == 'warrior':
         return (f'{char_name}'
                 f'нанёс урон противнику равный {5 + randint(3, 5)}')
@@ -12,10 +14,11 @@ def attack(char_name: str, char_class: str) -> str:
         return (f'{char_name}'
                 f'нанёс урон противнику равный {5 + randint(-3, -1)}')
     else:
-        return (print('Конец'))
+        return ('Конец')
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Защита от противника."""
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     if char_class == 'mage':
@@ -23,10 +26,11 @@ def defence(char_name: str, char_class: str) -> str:
     if char_class == 'healer':
         return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
     else:
-        return (print('Конец'))
+        return ('Конец')
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Активация специальных умений."""
     if char_class == 'warrior':
         return (f'{char_name}'
                 f'применил специальное умение «Выносливость {80 + 25}»')
@@ -35,10 +39,11 @@ def special(char_name: str, char_class: str) -> str:
     if char_class == 'healer':
         return (f'{char_name} применил специальное умение «Защита {10 + 30}»')
     else:
-        return (print('Конец'))
+        return ('Конец')
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Режим тренировки."""
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -63,6 +68,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Выбор класса персонажа."""
     approve_choice: str = None
     char_class: str = None
     while approve_choice != 'y':
@@ -84,7 +90,8 @@ def choice_char_class() -> str:
     return char_class
 
 
-def main():
+if __name__ == '__main__':
+    run_screensaver()
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name: str = input('...назови себя: ')
